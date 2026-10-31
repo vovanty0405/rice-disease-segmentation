@@ -1,0 +1,136 @@
+# ==============================================================================
+# .gitignore cho dự án Khóa Luận TN - Huấn luyện Đa phương thức (GD-RGBMS-DB)
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Bytecode và Cache của Python
+# ------------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------------------------------------------------------------------
+# 2. Bộ nhớ đệm dữ liệu (Dataset Cache & Temp files)
+# ------------------------------------------------------------------------------
+*.npz
+*.npy
+cache_gd/
+/cache/
+.cache/
+
+# ------------------------------------------------------------------------------
+# 3. Dữ liệu (Dataset) - Tránh đưa ảnh/nhãn nặng lên Git
+# ------------------------------------------------------------------------------
+Dataset/
+dataset/
+GD-RGBMS-DB/
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Các file ảnh & dữ liệu phổ biến nếu nằm lạc trong code
+*.jpg
+*.jpeg
+*.png
+*.PNG
+*.JPG
+*.tif
+*.tiff
+*.TIF
+*.TIFF
+
+# ------------------------------------------------------------------------------
+# 4. Trọng số mô hình (Weights / Checkpoints)
+# ------------------------------------------------------------------------------
+*.pth
+*.pt
+*.pwf
+*.ckpt
+*.h5
+*.onnx
+*.engine
+*.bin
+weights/
+*/weights/
+checkpoints/
+*/checkpoints/
+
+# ------------------------------------------------------------------------------
+# 5. Kết quả thực nghiệm, biểu đồ và Logs (Experiments / Results / Logs)
+# ------------------------------------------------------------------------------
+Experiments/
+benchmark_results/
+results/
+logs/
+*/logs/
+visualizes/
+*/visualizes/
+runs/
+wandb/
+.tensorboard/
+*.log
+
+# ------------------------------------------------------------------------------
+# 6. Thông tin bảo mật, API Keys, Credentials và Biến môi trường
+# ------------------------------------------------------------------------------
+.env
+.env.*
+*.env
+secrets.json
+credentials.json
+client_secret*.json
+*.pem
+*.key
+id_rsa*
+*.token
+
+# ------------------------------------------------------------------------------
+# 7. Môi trường ảo (Virtual Environments)
+# ------------------------------------------------------------------------------
+venv/
+.venv/
+env/
+.env/
+ENV/
+env.bak/
+venv.bak/
+
+# ------------------------------------------------------------------------------
+# 8. Cấu hình IDE, Editor và Hệ điều hành
+# ------------------------------------------------------------------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# ------------------------------------------------------------------------------
+# 9. Jupyter Notebook & Google Colab Checkpoints
+# ------------------------------------------------------------------------------
+.ipynb_checkpoints/
+*-checkpoint.ipynb
+
