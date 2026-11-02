@@ -272,6 +272,13 @@ def run_single(mode, seed, args, datasets, device):
                 k: v.detach().cpu().clone()
                 for k, v in model.state_dict().items()
             }
+
+        ep_time = time.time() - t0
+        history.append({
+            "epoch": epoch, "train_loss": train_loss, "val_loss": val["loss"],
+            "val_mIoU": val["mIoU"], "val_IoU_GD": val["IoU_GD"], "val_F1_GD": val["F1_GD"],
+            "lr": lr_now, "time_s": ep_time,
+        })
         print(_epoch_row([f"{epoch}/{args.epochs}", f"{train_loss:.4f}", f"{val['loss']:.4f}",
                           f"{val['mIoU']:.2f}", f"{val['IoU_GD']:.2f}", f"{val['F1_GD']:.2f}",
                           f"{lr_now:.1e}", f"{ep_time:.0f}s", "★ best" if is_best else ""]), flush=True)
