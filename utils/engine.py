@@ -209,7 +209,7 @@ def run_single(mode, seed, args, datasets, device):
     for d in (weights_dir, vis_dir):
         os.makedirs(d, exist_ok=True)
 
-    set_seed(seed)
+    set_seed(seed, deterministic=True)
     train_ds, val_ds, test_ds = datasets
 
     g = torch.Generator()
@@ -264,7 +264,7 @@ def run_single(mode, seed, args, datasets, device):
         scheduler.step()
         train_loss = running / max(n, 1)
 
-        val = evaluate(model, val_loader, device, criterion, use_amp)
+       val = evaluate(model, val_loader, device, criterion, use_amp=False)
         is_best = val["IoU_GD"] > best_score
         if is_best:
             best_score, best_epoch = val["IoU_GD"], epoch
